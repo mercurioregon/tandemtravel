@@ -1,77 +1,53 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
-import SignUpForm from './SignupForm';
-import LoginForm from './LoginForm';
+import { Nav } from "react-bootstrap";
+import { Navbar } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import Button from "react-bootstrap/Button";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Logo from '../assets/TandemLogo100px.png';
 
-import Auth from '../utils/auth';
 
-const AppNavbar = () => {
-  // set modal display state
-  const [showModal, setShowModal] = useState(false);
 
+export default function MainNav() {
   return (
-    <>
-      <Navbar bg='dark' variant='dark' expand='lg'>
-        <Container fluid>
-          <Navbar.Brand as={Link} to='/'>
-            Google Books Search
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls='navbar' />
-          <Navbar.Collapse id='navbar' className='d-flex flex-row-reverse'>
-            <Nav className='ml-auto d-flex'>
-              <Nav.Link as={Link} to='/'>
-                Search For Books
-              </Nav.Link>
-              {/* if user is logged in show saved books and logout */}
-              {Auth.loggedIn() ? (
-                <>
-                  <Nav.Link as={Link} to='/saved'>
-                    See Your Books
-                  </Nav.Link>
-                  <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
-                </>
-              ) : (
-                <Nav.Link onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>
-              )}
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-      {/* set modal data up */}
-      <Modal
-        size='lg'
-        show={showModal}
-        onHide={() => setShowModal(false)}
-        aria-labelledby='signup-modal'>
-        {/* tab container to do either signup or login component */}
-        <Tab.Container defaultActiveKey='login'>
-          <Modal.Header closeButton>
-            <Modal.Title id='signup-modal'>
-              <Nav variant='pills'>
-                <Nav.Item>
-                  <Nav.Link eventKey='login'>Login</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey='signup'>Sign Up</Nav.Link>
-                </Nav.Item>
-              </Nav>
-            </Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <Tab.Content>
-              <Tab.Pane eventKey='login'>
-                <LoginForm handleModalClose={() => setShowModal(false)} />
-              </Tab.Pane>
-              <Tab.Pane eventKey='signup'>
-                <SignUpForm handleModalClose={() => setShowModal(false)} />
-              </Tab.Pane>
-            </Tab.Content>
-          </Modal.Body>
-        </Tab.Container>
-      </Modal>
-    </>
-  );
-};
+    <div className="nav-container mb-5">
+        <Navbar collapseOnSelect expand="lg" bg="light" variant="light" fixed="top">
+            <Navbar.Brand href="#home">
+                <img
+                    src={Logo}
+                    width="50"
+                    height="50"
+                    className="d-inline-block align-top m-auto"
+                    alt="Brand Name logo"
+                />{' '}
+            </Navbar.Brand>
+            <Navbar.Toggle aria-controls="navbar-collapse-id" />
+            <Navbar.Collapse id="navbar-collapse-id">
+                <Nav>
+                    <Nav.Link href="">
+                        Send invite
+                    </Nav.Link>
+                    <Nav.Link href="">
+                        Blog
+                    </Nav.Link>
+                    <Nav.Link href="">
+                        Huddle
+                    </Nav.Link>
+                    <Nav.Link href="">
+                        Contact Us
+                    </Nav.Link>
+                    <Nav.Link href="">
+                        Login
+                    </Nav.Link>
+                    <Nav.Link href="">
+                        Create account
+                    </Nav.Link>
+                </Nav>
+            </Navbar.Collapse>
+        </Navbar>
+        <div className="content">
 
-export default AppNavbar;
+        </div>
+    </div>
+  )
+}
