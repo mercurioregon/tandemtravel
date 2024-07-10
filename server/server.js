@@ -8,6 +8,11 @@ const db = require('./config/connection');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
+//const http = require('http');
+const {Server} = require('socket.io');
+
+const cors = require("cors");
+
 const server = new ApolloServer({
   typeDefs,
   resolvers,
@@ -16,6 +21,7 @@ const server = new ApolloServer({
 const startApolloServer = async () => {
   await server.start();
   
+  app.use(cors());
   app.use(express.urlencoded({ extended: true }));
   app.use(express.json());
   
@@ -29,6 +35,26 @@ const startApolloServer = async () => {
       res.sendFile(path.join(__dirname, '../client/dist/index.html'));
     });
   } 
+
+  const io = new Server(server, {
+    cors: {
+      origin: `http://localhost:${PORT}`,
+    methods: ["GET", "POST"],
+    },
+  });
+
+  io.on('connection', (socket) => {
+    console.log(`user connected = ${socket.id}` );
+    
+    socket.on("join_room", (data) => {
+      socket.join(data);
+      console.log(`User with ID: ${socket.id} joined room ${data}`);
+    });
+
+    socket.on('disconnect', () => {
+      console.log(`user disconnected = ${socket.id}` );
+    });
+  });
 
   db.once('open', () => {
     app.listen(PORT, () => {
