@@ -26,11 +26,8 @@ export default function MainNav() {
             <Navbar.Toggle aria-controls="navbar-collapse-id" />
             <Navbar.Collapse id="navbar-collapse-id">
                 <Nav>
-                    <Nav.Link as={Link} to='Send-invite'>
+                    <Nav.Link as={Link} to='Invite'>
                         Send invite
-                    </Nav.Link>
-                    <Nav.Link as={Link} to='Blog'>
-                        Blog
                     </Nav.Link>
                     <Nav.Link as={Link} to='Huddle'>
                         Huddle

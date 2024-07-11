@@ -4,12 +4,18 @@ function InfoCards() {
   return (
     <div>
       <div className="container">
-        <h4 className='subtitle'>Travel together with Tandem.</h4>
+        <h4 className='subtitle'>Tandem is all in one.</h4>
         <div className="cards">
           <Card className='card'>
             <Card.Body className='card-body'>
-              <Card.Title>Central Planning</Card.Title>
-              <Card.Text>Use our interface to plan your group outing or trip for seemless communication.</Card.Text>
+              <Card.Title>Book flights</Card.Title>
+              <Card.Text>Use our interface to book a flight with your group on the same plane.</Card.Text>
+            </Card.Body>
+          </Card>
+          <Card className='card'>
+            <Card.Body className='card-body'>
+              <Card.Title>Book hotels</Card.Title>
+              <Card.Text>Book the hotel that you or your group decide to stay for the trip. Don’t settle for less, you can also see the reviews of hotels near airports.</Card.Text>
             </Card.Body>
           </Card>
           <Card className='card'>

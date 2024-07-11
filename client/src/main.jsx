@@ -7,7 +7,9 @@ import Homepage from './pages/homepage.jsx';
 import Login from './pages/LoginPage.jsx'
 import PageNotFound from './pages/404.jsx';
 import Contact from './pages/Contact-us.jsx';
-
+import Huddle from './pages/Huddle.jsx';
+import Invite from './pages/Send-invite.jsx';
+import CreateAccount from './pages/Create-account.jsx';
 
 const router = createBrowserRouter([
   {
@@ -18,13 +20,27 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Homepage />
-      }, {
-        path: '/Login',
-        element: <Login />
-      }, {
+      },
+      {
+        path: '/Invite',
+        element: <Invite />
+      },
+      {
         path: '/Contact-us',
         element: <Contact />
-      }
+      },
+      {
+        path: '/Huddle',
+        element: <Huddle />
+      },
+      {
+        path: '/Login',
+        element: <Login />
+      },
+      {
+        path: '/Create-account',
+        element: <CreateAccount />
+      },
     ]
   }
 ])
