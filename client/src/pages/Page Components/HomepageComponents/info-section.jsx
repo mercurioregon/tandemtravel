@@ -2,7 +2,6 @@ import Card from 'react-bootstrap/Card';
 
 function InfoCards() {
   return (
-    <div>
       <div className="container">
         <h4 className='subtitle'>Tandem is all in one.</h4>
         <div className="cards">
@@ -32,7 +31,6 @@ function InfoCards() {
           </Card>
         </div>
       </div>
-    </div>
   );
 }
 
