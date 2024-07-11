@@ -5,6 +5,8 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Logo from '../../public/blueLogo.png';
+import Homepage from "../pages/homepage";
+
 
 
 
@@ -12,7 +14,7 @@ export default function MainNav() {
   return (
     <div className="nav-container mb-5">
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light" fixed="top">
-            <Navbar.Brand href="#home">
+            <Navbar.Brand href="/#home">
                 <img
                     src={Logo}
                     width="50"
@@ -24,22 +26,22 @@ export default function MainNav() {
             <Navbar.Toggle aria-controls="navbar-collapse-id" />
             <Navbar.Collapse id="navbar-collapse-id">
                 <Nav>
-                    <Nav.Link href="">
+                    <Nav.Link as={Link} to='Send-invite'>
                         Send invite
                     </Nav.Link>
-                    <Nav.Link href="">
+                    <Nav.Link as={Link} to='Blog'>
                         Blog
                     </Nav.Link>
-                    <Nav.Link href="">
+                    <Nav.Link as={Link} to='Huddle'>
                         Huddle
                     </Nav.Link>
-                    <Nav.Link href="">
+                    <Nav.Link as={Link} to='Contact-us'>
                         Contact Us
                     </Nav.Link>
-                    <Nav.Link href="">
+                    <Nav.Link as={Link} to='Login'>
                         Login
                     </Nav.Link>
-                    <Nav.Link href="">
+                    <Nav.Link as={Link} to='Create-account'>
                         Create account
                     </Nav.Link>
                 </Nav>

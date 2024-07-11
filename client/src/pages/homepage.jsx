@@ -1,8 +1,8 @@
 import './homepage.css';
 import { Container } from "react-bootstrap"
-import HeroImg from './Page Components/HeroImg';
-import InfoCards from './Page Components/info-section';
-import Footer from './Page Components/footerSection';
+import HeroImg from './Page Components/HomepageComponents/HeroImg';
+import InfoCards from './Page Components/HomepageComponents/info-section';
+import Footer from './Page Components/HomepageComponents/footerSection';
 
 
 export default function Homepage() {
