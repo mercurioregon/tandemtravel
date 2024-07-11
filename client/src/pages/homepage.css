@@ -1,3 +1,24 @@
-.custom-margin-top {
-  margin-top: 5rem;
+:root {
+  --logo-color: #cfc9f3;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+.hero {
+  margin-top: 86.25px;
+}
+
+#hero {
+  /* background-image: url("https://brendansadventures.com/wp-content/uploads/2019/09/tasmania-1000px.jpg"); */
+  /* filter: brightness(50%); */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.hero-text {
+  color: var(--logo-color);
 }

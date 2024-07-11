@@ -1,18 +1,20 @@
 import React from 'react'
-import heroImage from '../../public/tasmania-1000px.jpg'
-import { Button } from 'react-bootstrap/Button';
+import background from "../../public/Heron.svg";
+
 
 
 function HeroImg() {
+    console.log('hero')
   return (
     <header style={{paddingLeft: 0}}>
         <div
-        className="p-5 text-center bg-image"
-        style={{backgroundImage: heroImage, height: 400}}
+        id='hero'
+        className="p-5 text-center"
+        style={{backgroundImage: `url(${background})`, height: 500}}
         >
-        <div className="mask" style={{backgroundColor: 'rgba(0, 0, 0, 0.6)'}}>
+        <div>
             <div className="d-flex justify-content-center align-items-center h-100">
-                <div className="text-white">
+                <div className='hero-text mask'>
                     <h1 className="mb-3">Tandem</h1>
                     <h4 className="mb-3">Travel with friends</h4>
                 </div>
