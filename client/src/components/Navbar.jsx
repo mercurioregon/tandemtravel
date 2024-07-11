@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Logo from '../assets/TandemLogo100px.png';
+import Logo from '../../public/blueLogo.png';
 
 
 
