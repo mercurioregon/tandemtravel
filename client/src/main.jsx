@@ -5,12 +5,15 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import App from './App.jsx'
 import Homepage from './pages/homepage.jsx';
 import Login from './pages/LoginPage.jsx'
+import PageNotFound from './pages/404.jsx';
+import Contact from './pages/Contact-us.jsx';
+
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
-    errorElement: <h1 className='display-2'>Wrong page!</h1>,
+    errorElement: <PageNotFound />,
     children: [
       {
         index: true,
@@ -18,6 +21,9 @@ const router = createBrowserRouter([
       }, {
         path: '/Login',
         element: <Login />
+      }, {
+        path: '/Contact-us',
+        element: <Contact />
       }
     ]
   }
