@@ -1,8 +1,9 @@
 const { Schema, model } = require('mongoose');
 
 //const userSchema = require('./User');
+//const eventSchema = require('./Event');
 
-const eventSchema = new Schema(
+const calendarEventSchema = new Schema(
   {
     name: {
       type: String,
@@ -20,23 +21,6 @@ const eventSchema = new Schema(
         type: Date,
         required: true,
     },
-    venue: {
-        type: String,
-    },
-    latitude: {
-        type: Number,
-    },
-    longitude: {
-        type: Number,
-    },
-    owner: [ {
-      type: Schema.Types.ObjectId,
-      ref: 'user',
-    },],
-    attendees:[ {
-      type: Schema.Types.ObjectId,
-      ref: 'user',
-    },],
     createdAt: {
         type: Date,
         default: Date.now
@@ -51,8 +35,6 @@ const eventSchema = new Schema(
 );
 
 
+const CalendarEvent = model('CalendarEvent', calendarEventSchema);
 
-
-const Event = model('Event', eventSchema);
-
-module.exports = Event;
+module.exports = CalendarEvent;
