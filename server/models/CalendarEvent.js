@@ -1,8 +1,5 @@
 const { Schema, model } = require('mongoose');
 
-//const userSchema = require('./User');
-//const eventSchema = require('./Event');
-
 const calendarEventSchema = new Schema(
   {
     name: {
@@ -21,6 +18,11 @@ const calendarEventSchema = new Schema(
         type: Date,
         required: true,
     },
+    
+    owner: [ {
+      type: Schema.Types.ObjectId,
+      ref: 'user',
+    },],
     createdAt: {
         type: Date,
         default: Date.now
