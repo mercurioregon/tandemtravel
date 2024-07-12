@@ -1,15 +1,12 @@
 import './homepage.css';
-import { Container } from "react-bootstrap"
-import HeroImg from './Page Components/HomepageComponents/HeroImg';
-import InfoCards from './Page Components/HomepageComponents/info-section';
-import Footer from './Page Components/HomepageComponents/footerSection';
+import InfoCards from './PageComponents/HomepageComponents/info-section';
+import Footer from './PageComponents/HomepageComponents/footerSection';
 
 
 export default function Homepage() {
   return (
     
     <div className="hero">
-        <HeroImg />
         <InfoCards />
         <Footer />
     </div>

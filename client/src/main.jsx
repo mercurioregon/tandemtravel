@@ -10,6 +10,7 @@ import Contact from './pages/Contact-us.jsx';
 import Huddle from './pages/Huddle.jsx';
 import Invite from './pages/Send-invite.jsx';
 import CreateAccount from './pages/Create-account.jsx';
+import LandingPage from './pages/LandingPage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Homepage />
+        element: <LandingPage />
       },
       {
         path: '/Invite',
