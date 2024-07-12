@@ -1,3 +1,4 @@
+
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -11,6 +12,15 @@ import Huddle from './pages/Huddle.jsx';
 import Invite from './pages/Send-invite.jsx';
 import CreateAccount from './pages/Create-account.jsx';
 
+import ReactDOM from 'react-dom/client';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
+import App from './App.jsx';
+import Home from './pages/Home.jsx';
+import Calendar from './pages/Calendar.jsx';
+import PageNotFound from './pages/PageNotFound.jsx';
+
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -19,6 +29,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
+
         element: <Homepage />
       },
       {
