@@ -6,27 +6,30 @@ const eventSchema = new Schema(
     name: {
       type: String,
       required: true,
-      unique: true,
     },
-    desciption: {
+    description: {
         type: String,
     },
     start: {
         type: Date,
         required: true,
+        default: Date.now,
     },
     end: {
         type: Date,
         required: true,
+        default: Date.now,
     },
     venue: {
         type: String,
     },
     latitude: {
         type: Number,
+        default: 0,
     },
     longitude: {
         type: Number,
+        default: 0,
     },
     owner: [ {
       type: Schema.Types.ObjectId,

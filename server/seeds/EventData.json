@@ -1,7 +1,7 @@
   [
     {
         "name": "Family Reunion",
-        "desciption": "The Hatfields are not invited",
+        "description": "The Hatfields are not invited",
         "start": "2024-08-01",
         "end": "2024-08-03",
         "venue": "The Farm",
@@ -11,8 +11,8 @@
         "attendees": ["66915c2691800be264996a76", "66915c2691800be264996a77"]
     },
     {
-        "name": "Bob's Borthday",
-        "desciption": "Bring your own bottle",
+        "name": "Bob's Birthday",
+        "description": "Bring your own bottle",
         "start": "2024-08-03",
         "end": "2024-08-03",
         "venue": "Home",
@@ -23,7 +23,7 @@
     },
     {
         "name": "Work Party",
-        "desciption": "Bring your own gift, no white elephant",
+        "description": "Bring your own gift, no white elephant",
         "start": "2024-08-05",
         "end": "2024-08-05",
         "venue": "Work",
