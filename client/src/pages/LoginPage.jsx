@@ -1,8 +1,10 @@
-import React from 'react'
+import LoginPageComponent from './PageComponents/LoginComponents/LoginComponent';
+import './LoginPage.css';
 
 function Login() {
+  console.log('Login Page');
   return (
-    <div>Login</div>
+    <LoginPageComponent />
   )
 }
 

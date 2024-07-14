@@ -1,0 +1,43 @@
+root : {
+  --dblue: #1a2737;
+  --lblue: #1c3751;
+  --dgrey: #383a43;
+  --lgrey: #697583;
+  --grey: #878688;
+  --white: #eaf2ef;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+/* .loginHero {
+    
+} */
+
+Stack {
+}
+
+.content {
+  align-items: center;
+  background-color: var(--dgrey);
+}
+
+.loginTitle {
+  margin-top: 82.25px;
+  color: var(--dblue);
+  text-align: center;
+  /* width: 100%; */
+}
+
+.loginForm {
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2em;
+}

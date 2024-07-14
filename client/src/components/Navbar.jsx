@@ -35,9 +35,6 @@ export default function MainNav() {
                     <Nav.Link as={Link} to='Contact-us'>
                         Contact Us
                     </Nav.Link>
-                    <Nav.Link as={Link} to='Login'>
-                        Login
-                    </Nav.Link>
                     <Nav.Link as={Link} to='Create-account'>
                         Create account
                     </Nav.Link>

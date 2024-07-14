@@ -1,14 +1,13 @@
 import './homepage.css';
 import InfoCards from './PageComponents/HomepageComponents/info-section';
-import Footer from './PageComponents/HomepageComponents/footerSection';
 
 
-export default function Homepage() {
+
+export default function Overview() {
   return (
     
-    <div className="hero">
+    <div>
         <InfoCards />
-        <Footer />
     </div>
   )
 }

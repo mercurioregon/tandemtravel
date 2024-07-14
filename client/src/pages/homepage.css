@@ -16,45 +16,6 @@
   margin: 0px;
 }
 
-.hero {
-  margin-top: 82.25px;
-  width: 100%;
-}
-
-#hero {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  margin-bottom: 1em;
-}
-
-#hero .hero-text {
-  color: var(--white);
-}
-
-.hero-text h1 {
-  font-size: 5em;
-}
-
-.hero-text h4 {
-  font-size: 30px;
-}
-
-.button {
-  color: var(--dgrey);
-  background-color: var(--white);
-  border-color: var(--white);
-}
-
-.button:hover {
-  background-color: var(--lgrey);
-  border-color: var(--lgrey);
-  transition: 0.4s;
-}
-
 .container {
   /* display: flex;
   flex-wrap: wrap; */
