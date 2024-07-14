@@ -5,11 +5,6 @@ import Navbar from './components/Navbar';
 
 
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
-import io from 'socket.io-client';
-import { useState } from "react";
-
-const socket = io.connect("https://localhost:3001");
-
 
 const client = new ApolloClient({
   uri: '/graphql',
@@ -17,8 +12,6 @@ const client = new ApolloClient({
 });
 
 function App() {
-   
-
   return (
     <ApolloProvider client={client}>
       <div className="flex-column justify-center align-center min-100-vh bg-primary">
