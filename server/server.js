@@ -65,3 +65,38 @@ const startApolloServer = async () => {
 };
 
 startApolloServer();
+
+const nodemailer = require('nodemailer')
+
+require("dotenv").config()
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
+
+const transporter = nodemailer.createTransport({
+  host: process.env.HOST,
+  port: process.env.PORT_NUM,
+  secureConnection: false,
+  auth: {
+    user: process.env.USER_NAME,
+    pass: process.env.USER_PW,
+  },
+  tls: {
+    ciphers: 'SSLv3'
+  }
+});
+
+
+
+
+app.post('/api/send', async (req, res) => {
+  const options = {
+    from: `${req.body.name} <${req.body.email}>`,
+    to: req.body.email,
+    subject: req.body.subject,
+    html: req.body.message,
+  };
+  console.log(options)
+  await transporter.sendMail(options);
+
+  res.status(200).send("success")
+})
