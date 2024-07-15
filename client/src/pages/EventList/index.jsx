@@ -31,7 +31,14 @@ const EventList = () => {
     if (error) return <p>Error: {error.message}</p>;
 
     if (!events.length) {
-    return <h3>No events Yet</h3>;
+      return (
+        <div>
+          <h1>Events</h1><Link to={`/event/add`}>
+              <button >Add Event</button> 
+            </Link>
+          <h3>No events yet</h3>
+        </div>
+      );
   }
 
 
