@@ -11,8 +11,8 @@ const EventAdd = () => {
   const [formState, setFormState] = useState({
     name: '',
     description: '',
-    start: new Date(),
-    end: new Date(),
+    start: new Date().toISOString().substring(0, 10),
+    end: new Date().toISOString().substring(0, 10),
     venue: "",
     latitude: 0,
     longitude: 0,
@@ -83,7 +83,7 @@ console.log({ ...formState });
                   placeholder="Start Date"
                   name="start"
                   type="date"
-                  value={formState.start.toISOString().substring(0, 10)}
+                  value={new Date(formState.start).toISOString().substring(0, 10)}
                   onChange={handleChange}
                 />
                 
@@ -92,7 +92,7 @@ console.log({ ...formState });
                   placeholder="End Date"
                   name="end"
                   type="date"
-                  value={formState.end.toISOString().substring(0, 10)}
+                  value={new Date(formState.end).toISOString().substring(0, 10)}
                   onChange={handleChange}
                 />                
                 <input
