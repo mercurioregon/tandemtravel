@@ -3,7 +3,7 @@ import { gql } from '@apollo/client';
 
 export const ADD_EVENT = gql`
   mutation Mutation($name: String, $description: String, $start: String, $end: String, $venue: String, $latitude: Float, $longitude: Float) {
-  addEvent(name: $name, desrciption: $description, start: $start, end: $end, venue: $venue, latitude: $latitude, longitude: $longitude) {
+  addEvent(name: $name, description: $description, start: $start, end: $end, venue: $venue, latitude: $latitude, longitude: $longitude) {
     _id
     name
     description
@@ -17,8 +17,8 @@ export const ADD_EVENT = gql`
 `;
 
 export const EDIT_EVENT = gql`
-  mutation Mutation($name: String, $description: String, $start: String, $end: String, $venue: String, $latitude: Float, $longitude: Float) {
-  editEvent(name: $name, desrciption: $description, start: $start, end: $end, venue: $venue, latitude: $latitude, longitude: $longitude) {
+  mutation Mutation( $id: String, $name: String, $description: String, $start: String, $end: String, $venue: String, $latitude: Float, $longitude: Float) {
+  editEvent(_id: $id, name: $name, description: $description, start: $start, end: $end, venue: $venue, latitude: $latitude, longitude: $longitude, ) {
     _id
     name
     description
@@ -27,6 +27,7 @@ export const EDIT_EVENT = gql`
     venue
     latitude
     longitude
+    
   }
 }
 `;

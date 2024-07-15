@@ -1,48 +1,47 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-
 import { useMutation } from '@apollo/client';
-import { ADD_EVENT } from '../../utils/mutations';
-import { useNavigate } from 'react-router-dom';
+import { EDIT_EVENT } from '../../utils/mutations';
+import { Link, useNavigate } from 'react-router-dom';
 
-const EventAdd = () => {
+const EventEdit = ({ event }) => {
+  
   const navigate = useNavigate();
-
+  
   const [formState, setFormState] = useState({
-    name: '',
-    description: '',
-    start: new Date().toISOString().substring(0, 10),
-    end: new Date().toISOString().substring(0, 10),
-    venue: "",
-    latitude: 0,
-    longitude: 0,
-    owner: [],
-    attendees: []
+    _id: event._id,
+    name: event.name,
+    description: event.description,
+    start: new Date(event.start),
+    end: new Date(event.end),
+    venue: event.venue,
+    latitude: event.latitude,
+    longitude: event.longitude,
+    owner: event.owner,
+    attendees:  event.attendees
   });
 
-  const [addEvent, { error, data }] = useMutation(ADD_EVENT);
+    const [editEvent, { error, data }] = useMutation(EDIT_EVENT);
+  
+    const handleChange = (event) => {
+      const { name, value } = event.target;
+      console.log(formState);
+      setFormState({
+        ...formState,
+        [name]: value,
+      });
+    };
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
+    const handleFormSubmit = async (event) => {
+      event.preventDefault();
 
-    setFormState({
-      ...formState,
-      [name]: value,
-    });
-  };
-
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
-console.log({ ...formState });
+      console.log("handleFormSubmit",{ ...formState });
     try {
-      const { data } = await addEvent({
+      const { data } = await editEvent({
         variables: { ...formState },
       });
 
-      //redirect to events page if successful
-      if (data.addEvent._id){
-        navigate(`/event/${data.addEvent._id}`);
-      }
+      //redirect to event
+      navigate(`/event/${data.editEvent._id}`);
       
     } catch (e) {
       console.error(e);
@@ -53,12 +52,12 @@ console.log({ ...formState });
     <main className="flex-col justify-center mb-4">
       <div className="col-12 col-lg-10">
         <div className="card">
-          <h1>Add Event</h1>
+          <h1>Edit Event</h1>
           <div className="card-body">
             {data ? (
               <p>
                 Success! You may now head{' '}
-                <Link to="/events">back to events.</Link>
+                <Link to={`/event/${event._id}`}>back to event.</Link>
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
@@ -83,7 +82,7 @@ console.log({ ...formState });
                   placeholder="Start Date"
                   name="start"
                   type="date"
-                  value={new Date(formState.start).toISOString().substring(0, 10)}
+                  value={formState.start.toISOString().substring(0, 10)}
                   onChange={handleChange}
                 />
                 
@@ -92,7 +91,7 @@ console.log({ ...formState });
                   placeholder="End Date"
                   name="end"
                   type="date"
-                  value={new Date(formState.end).toISOString().substring(0, 10)}
+                  value={formState.end.toISOString().substring(0, 10)}
                   onChange={handleChange}
                 />                
                 <input
@@ -108,7 +107,7 @@ console.log({ ...formState });
                   style={{ cursor: 'pointer' }}
                   type="submit"
                 >
-                  Submit
+                  Save
                 </button>
                 <Link to="/events">
                 <button
@@ -134,4 +133,5 @@ console.log({ ...formState });
   );
 };
 
-export default EventAdd;
+  
+  export default EventEdit;

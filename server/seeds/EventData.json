@@ -5,8 +5,8 @@
         "start": "2024-08-01",
         "end": "2024-08-03",
         "venue": "The Farm",
-        "latitude": "42.25",
-        "longitude": "120.1233",
+        "latitude": 42.25,
+        "longitude": 120.1233,
         "owner": ["66915bd8ae0b707a1b431063"],
         "attendees": ["66915c2691800be264996a76", "66915c2691800be264996a77"]
     },
@@ -16,8 +16,8 @@
         "start": "2024-08-03",
         "end": "2024-08-03",
         "venue": "Home",
-        "latitude": "44.35",
-        "longitude": "121.1333",
+        "latitude": 44.35,
+        "longitude": 121.1333,
         "owner": ["66915bd8ae0b707a1b431063"],
         "attendees": ["66915c2691800be264996a76", "66915c2691800be264996a77", "66915ce8f661f7a1f2a2fc51"]
     },
@@ -27,8 +27,8 @@
         "start": "2024-08-05",
         "end": "2024-08-05",
         "venue": "Work",
-        "latitude": "43.35",
-        "longitude": "121.1633",
+        "latitude": 43.35,
+        "longitude": 121.1633,
         "owner": ["66915bd8ae0b707a1b431063"],
         "attendees": ["66915ce8f661f7a1f2a2fc52", "66915ce8f661f7a1f2a2fc51", "66915c2691800be264996a77"]
 

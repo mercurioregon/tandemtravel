@@ -5,14 +5,14 @@ import { useQuery } from '@apollo/client';
 import { QUERY_EVENT_SINGLE } from '../../utils/queries';
 
 const EventSingle = () => {
-const { eventId } = useParams();
+  const { eventId } = useParams();
 
-const { loading, data } = useQuery(QUERY_EVENT_SINGLE, {
-    // pass URL parameter
-    variables: { eventId: eventId },
-});
+  const { loading, data } = useQuery(QUERY_EVENT_SINGLE, {
+      // pass URL parameter
+      variables: { eventId: eventId },
+  });
 
-const event = data?.event || {};
+  const event = data?.event || {};
 
   if (loading) {
     return <div>Loading...</div>;
@@ -20,7 +20,7 @@ const event = data?.event || {};
 
   return (
     <div className="my-3">
-      <h1>Event View</h1><Link to={`/event/${event._id}`}>
+      <h1>Event View</h1><Link to={`/event/edit/${event._id}`}>
           <button >Edit</button> 
         </Link>
       <h3>{event.name} at {event.venue} {event.start} to {event.end}</h3>

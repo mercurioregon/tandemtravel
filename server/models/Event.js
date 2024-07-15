@@ -9,6 +9,7 @@ const eventSchema = new Schema(
     },
     description: {
         type: String,
+        default: "",
     },
     start: {
         type: Date,
@@ -22,6 +23,7 @@ const eventSchema = new Schema(
     },
     venue: {
         type: String,
+        default: "",
     },
     latitude: {
         type: Number,

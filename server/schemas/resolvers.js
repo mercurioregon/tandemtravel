@@ -46,25 +46,37 @@ const resolvers = {
   },
 
   Mutation: {
-    createUser: async (parent, args) => {
+    addUser: async (parent, args) => {
       const user = await User.create(args);
       return user;
     },
-     addEvent: async (parent, args) => {
+     addEvent: async (parent,  args) => {
+      console.log("addEvent ",args);
       const event = await Event.create(args);
       return event;
     },
-    editEvent: async (parent, { id, name, description, start,end , venue, latitude, longitude }) => {
-     const event = await Event.findByIdAndUpdate(
-      id,
-      {name, description, start,end , venue, latitude, longitude },
-      { new: true });
-     return event;
+    editEvent: async (parent, args) => {
+      console.log("editEvent ",args);
+      
+      
+      const event = await Event.findOneAndUpdate(
+        { _id: args._id },
+        { $set: {
+          "name" : args.name, 
+          "description" : args.description,
+          "start" : args.start,
+          "end" : args.end,
+          "venue" : args.venue,
+          "latitude" : args.latitude,
+          "longitude" : args.longitude,
+        } 
+        },
+        { runValidators: true, new: true }
+      );
+
+      
+      return event;
    },
-    createCalendarEvent: async (parent, args) => {
-      const calendarEvent = await CalendarEvent.create(args);
-      return calendarEvent;
-    },
     deleteEvent: async (parent, { id }) => {
       try {
         console.log("deleteEvent " + id._id);
