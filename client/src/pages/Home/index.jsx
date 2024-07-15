@@ -1,14 +1,16 @@
+import './index.css';
+import HeroImg from '../Page Components/HomepageComponents/HeroImg';
+import InfoCards from '../Page Components/HomepageComponents/info-section';
+import Footer from '../Page Components/HomepageComponents/footerSection';
 
 
-const Home = () => {
-  console.log("Home");
-
-    return (
-        <div>
-          <h1>Home</h1>
-        </div>
-    );
-  };
-  
-  export default Home;
-  
+export default function Homepage() {
+  return (
+    
+    <div className="hero">
+        <HeroImg />
+        <InfoCards />
+        <Footer />
+    </div>
+  )
+}

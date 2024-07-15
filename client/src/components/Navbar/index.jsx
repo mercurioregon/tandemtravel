@@ -1,16 +1,16 @@
 import { Nav } from "react-bootstrap";
 import { Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Button from "react-bootstrap/Button";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Logo from '../../public/blueLogo.png';
-import Homepage from "../pages/homepage";
+//import Button from "react-bootstrap/Button";
+//import Row from "react-bootstrap/Row";
+//import Col from "react-bootstrap/Col";
+import Logo from '../../../public/blueLogo.png';
+//import Homepage from "../pages/Home";
 
 
 
 
-export default function MainNav() {
+function MainNav() {
   return (
     <div className="nav-container mb-5">
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light" fixed="top">
@@ -26,9 +26,13 @@ export default function MainNav() {
             <Navbar.Toggle aria-controls="navbar-collapse-id" />
             <Navbar.Collapse id="navbar-collapse-id">
                 <Nav>
-                    <Nav.Link as={Link} to='Invite'>
-                        Send invite
+                    <Nav.Link as={Link} to='/'>
+                        Home
                     </Nav.Link>
+                    <Nav.Link as={Link} to='events'>
+                        Events
+                    </Nav.Link>
+
                     <Nav.Link as={Link} to='Huddle'>
                         Huddle
                     </Nav.Link>
@@ -50,3 +54,5 @@ export default function MainNav() {
     </div>
   )
 }
+
+export default MainNav;

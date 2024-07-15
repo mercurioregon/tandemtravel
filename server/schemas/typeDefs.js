@@ -12,8 +12,8 @@ type User {
     accepted: Boolean
     declined: Boolean
     createdAt: String
-
-  }
+    
+    }
 
   type Event {
     _id: ID
@@ -49,10 +49,19 @@ type User {
   }
 
   type Mutation {
-    
+    addUser(
+      username: String,
+      email: String,
+      password: String,
+      signupToken: String,
+      invited: Boolean,
+      accepted: Boolean,
+      declined: Boolean
+      ): User
+
     addEvent(
       name: String,
-      desrciption: String,
+      description: String,
       start: String,
       end: String,
       venue: String,
@@ -61,9 +70,9 @@ type User {
       ): Event
 
     editEvent(
-      id: ID!,
+      _id: String,
       name: String,
-      desrciption: String,
+      description: String,
       start: String,
       end: String,
       venue: String,
@@ -72,7 +81,7 @@ type User {
       ): Event
 
     deleteEvent(id: ID!): String
-    
+}    
    `;
 
 module.exports = typeDefs;

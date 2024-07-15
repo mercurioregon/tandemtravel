@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { useMutation  } from '@apollo/client';
 import { DELETE_EVENT } from '../../utils/mutations';
-import EventCard from '../../components/EventCard';
+import EventCard from '../Page Components/EventCard';
 import { QUERY_EVENT_LIST } from '../../utils/queries';
 
 function DeleteEventButton({ eventId, refetch }) {

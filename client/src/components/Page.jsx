@@ -13,7 +13,7 @@ function Page({ currentPage }) {
 
   return (
     <section>
-      <h2>{toProperCase(currentPage)}</h2>
+      <h2>{toProperCase(currentPage)} - This may not be needed</h2>
 
       <PageContent>
         <Outlet />

@@ -1,28 +1,22 @@
 
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import 'bootstrap/dist/css/bootstrap.min.css'
-
-import App from './App.jsx'
-import Homepage from './pages/homepage.jsx';
-import Login from './pages/LoginPage.jsx'
-import PageNotFound from './pages/404.jsx';
-import Contact from './pages/Contact-us.jsx';
-import Huddle from './pages/Huddle.jsx';
-import Invite from './pages/Send-invite.jsx';
-import CreateAccount from './pages/Create-account.jsx';
-
-import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import App from './App.jsx';
 import Home from './pages/Home';
+import Login from './pages/LoginPage.jsx';
+import PageNotFound from './pages/404';
+import Contact from './pages/ContactUs';
+import Huddle from './pages/Huddle.jsx';
+//import Invite from './pages/Send-invite.jsx';
+import CreateAccount from './pages/Create-account.jsx';
+
 import EventList from './pages/EventList';
 import EventSingle from './pages/EventSingle';
 import EventAdd from './pages/EventAdd';
 import EventEdit from './pages/EventEdit';
 
-import PageNotFound from './pages/PageNotFound';
+
 
 
 const router = createBrowserRouter([
