@@ -1,38 +1,46 @@
 const { Schema, model } = require('mongoose');
 
-const userSchema = require('./User');
 
 const eventSchema = new Schema(
   {
-    eventId: {
-        type: Schema.Types.ObjectId,
-        default: () => new Types.ObjectId(),
-      },
     name: {
       type: String,
       required: true,
-      unique: true,
     },
-    desciption: {
+    description: {
         type: String,
+        default: "",
     },
     start: {
         type: Date,
         required: true,
+        default: Date.now,
     },
     end: {
         type: Date,
         required: true,
+        default: Date.now,
     },
     venue: {
         type: String,
+        default: "",
     },
     latitude: {
         type: Number,
+        default: 0,
     },
     longitude: {
         type: Number,
+        default: 0,
     },
+    owner: [ {
+      type: Schema.Types.ObjectId,
+      ref: 'user',
+    },],
+    attendees:[ {
+      type: Schema.Types.ObjectId,
+      ref: 'user',
+    },],
     createdAt: {
         type: Date,
         default: Date.now
