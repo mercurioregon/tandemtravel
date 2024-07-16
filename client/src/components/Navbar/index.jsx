@@ -8,9 +8,12 @@ import Logo from '../../../public/blueLogo.png';
 //import Homepage from "../pages/Home";
 
 
-
+import Auth from '../../utils/auth';
 
 function MainNav() {
+  
+    const token = Auth.loggedIn() ? Auth.getToken() : null;
+
   return (
     <div className="nav-container mb-5">
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light" fixed="top">
@@ -29,22 +32,44 @@ function MainNav() {
                     <Nav.Link as={Link} to='/'>
                         Home
                     </Nav.Link>
-                    <Nav.Link as={Link} to='events'>
+                    {token ? 
+                        <Nav.Link as={Link} to='events'>
                         Events
-                    </Nav.Link>
-
-                    <Nav.Link as={Link} to='Huddle'>
+                        </Nav.Link>
+                         : null
+                    }
+                    
+                    {token ? 
+                        <Nav.Link as={Link} to='Huddle'>
                         Huddle
                     </Nav.Link>
+                         : null
+                    }
+                    
                     <Nav.Link as={Link} to='Contact-us'>
                         Contact Us
                     </Nav.Link>
-                    <Nav.Link as={Link} to='Login'>
-                        Login
-                    </Nav.Link>
-                    <Nav.Link as={Link} to='Create-account'>
-                        Create account
-                    </Nav.Link>
+                    
+
+                    {token ? 
+                        <Nav.Link as={Link} to='Login'>
+                        Logout
+                        </Nav.Link>
+                         : 
+                         <Nav.Link as={Link} to='Login'>
+                         Login
+                     </Nav.Link>
+                    }
+
+                    {token ? 
+                        null
+                         : 
+                         <Nav.Link as={Link} to='Create-account'>
+                         Create account
+                     </Nav.Link>
+                    }
+                    
+                    
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

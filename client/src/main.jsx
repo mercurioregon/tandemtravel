@@ -10,7 +10,7 @@ import Contact from './pages/ContactUs';
 import Huddle from './pages/Huddle.jsx';
 //import Invite from './pages/Send-invite.jsx';
 import CreateAccount from './pages/Create-account.jsx';
-
+import 'bootstrap/dist/css/bootstrap.min.css'
 import EventList from './pages/EventList';
 import EventSingle from './pages/EventSingle';
 import EventAdd from './pages/EventAdd';
@@ -29,6 +29,10 @@ const router = createBrowserRouter([
         index: true,
 
         element: <Home />
+      },
+      {
+        path: '/login',
+        element: <EventList />
       },
       {
         path: '/events',

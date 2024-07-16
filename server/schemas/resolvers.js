@@ -58,7 +58,6 @@ const resolvers = {
     editEvent: async (parent, args) => {
       console.log("editEvent ",args);
       
-      
       const event = await Event.findOneAndUpdate(
         { _id: args._id },
         { $set: {
@@ -73,7 +72,7 @@ const resolvers = {
         },
         { runValidators: true, new: true }
       );
-
+      console.log("event ",event);
       
       return event;
    },

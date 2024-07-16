@@ -33,7 +33,7 @@ const EventAdd = () => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-console.log({ ...formState });
+
     try {
       const { data } = await addEvent({
         variables: { ...formState },
@@ -50,10 +50,16 @@ console.log({ ...formState });
   };
 
   return (
+    <div>
+    <div className='container'>
+      <div className="d-flex justify-content-between align-items-center p-3 bg-light border">
+      <h1>Add Event</h1>
+        </div>
+        </div>
     <main className="flex-col justify-center mb-4">
       <div className="col-12 col-lg-10">
         <div className="card">
-          <h1>Add Event</h1>
+         
           <div className="card-body">
             {data ? (
               <p>
@@ -131,6 +137,7 @@ console.log({ ...formState });
         </div>
       </div>
     </main>
+    </div>
   );
 };
 

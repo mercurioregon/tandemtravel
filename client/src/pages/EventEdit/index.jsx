@@ -18,9 +18,6 @@ const Event = () => {
 
   return (
     <div>
-      <h1>{data.event.name}</h1>
-      <p>{data.event.description}</p>
-      <p>{data.event.venue}</p>
       <EventEdit event={data.event} />
     </div>
   );
