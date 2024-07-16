@@ -3,10 +3,6 @@ const bcrypt = require('bcrypt');
 
 const userSchema = new Schema(
   {
-    userId: {
-      type: Schema.Types.ObjectId,
-      default: () => new Types.ObjectId(),
-    },
     username: {
       type: String,
       required: true,
@@ -24,6 +20,18 @@ const userSchema = new Schema(
     },
     signupToken: {
       type: String,
+    },
+    invited: {
+      type: Boolean,
+      default: false,
+    },
+    accepted: {
+      type: Boolean,
+      default: false,
+    },
+    declined: {
+      type: Boolean,
+      default: false,
     },
     createdAt: {
         type: Date,
