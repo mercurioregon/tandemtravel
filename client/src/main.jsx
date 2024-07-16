@@ -4,13 +4,14 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import App from './App.jsx';
 import Home from './pages/Home';
-import Login from './pages/LoginPage.jsx';
+import Login from './pages/Login';
 import PageNotFound from './pages/404';
 import Contact from './pages/ContactUs';
 import Huddle from './pages/Huddle.jsx';
 //import Invite from './pages/Send-invite.jsx';
-import CreateAccount from './pages/Create-account.jsx';
+import CreateAccount from './pages/CreateAccount';
 import 'bootstrap/dist/css/bootstrap.min.css'
+
 import EventList from './pages/EventList';
 import EventSingle from './pages/EventSingle';
 import EventAdd from './pages/EventAdd';
@@ -32,7 +33,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/login',
-        element: <EventList />
+        element: <Login />
+      },
+      {
+        path: '/CreateAccount',
+        element: <CreateAccount />
       },
       {
         path: '/events',

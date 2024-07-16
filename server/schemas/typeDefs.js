@@ -15,6 +15,10 @@ type User {
     
     }
 
+   type Auth {
+    token: ID!
+    user: User
+  }
   type Event {
     _id: ID
     name: String
@@ -49,15 +53,8 @@ type User {
   }
 
   type Mutation {
-    addUser(
-      username: String,
-      email: String,
-      password: String,
-      signupToken: String,
-      invited: Boolean,
-      accepted: Boolean,
-      declined: Boolean
-      ): User
+    login(email: String!, password: String!): Auth
+    addUser(username: String!, email: String!, password: String!): Auth
 
     addEvent(
       name: String,

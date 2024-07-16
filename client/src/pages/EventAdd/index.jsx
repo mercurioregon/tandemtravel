@@ -5,6 +5,9 @@ import { useMutation } from '@apollo/client';
 import { ADD_EVENT } from '../../utils/mutations';
 import { useNavigate } from 'react-router-dom';
 
+
+import Auth from '../../utils/auth';
+
 const EventAdd = () => {
   const navigate = useNavigate();
 
@@ -49,6 +52,11 @@ const EventAdd = () => {
     }
   };
 
+  // Redirect to login if not already
+  if(!Auth.loggedIn()){
+    navigate('/login');
+  }
+  
   return (
     <div>
     <div className='container'>

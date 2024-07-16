@@ -4,6 +4,8 @@ import { useMutation  } from '@apollo/client';
 import { DELETE_EVENT } from '../../utils/mutations';
 import EventCard from '../Page Components/EventCard';
 import { QUERY_EVENT_LIST } from '../../utils/queries';
+import { useNavigate } from 'react-router-dom';
+import Auth from '../../utils/auth';
 
 function DeleteEventButton({ eventId, refetch }) {
   const [deleteEvent] = useMutation(DELETE_EVENT, {
@@ -22,6 +24,7 @@ function DeleteEventButton({ eventId, refetch }) {
 }
 
 const EventList = () => {
+  const navigate = useNavigate();
     const {  loading, error, data, refetch } = useQuery(QUERY_EVENT_LIST, {refetchOnWindowFocus: true, });
 
     // const { data, error, isLoading, refetch } = useQuery('myData', fetchData, {
@@ -49,6 +52,10 @@ const EventList = () => {
       );
   }
 
+  // Redirect to login if not already
+  if(!Auth.loggedIn()){
+    navigate('/login');
+  }
 
   return (
     <div>
