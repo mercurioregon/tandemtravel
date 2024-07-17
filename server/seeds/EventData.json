@@ -32,5 +32,40 @@
         "owner": ["66915bd8ae0b707a1b431063"],
         "attendees": ["66915ce8f661f7a1f2a2fc52", "66915ce8f661f7a1f2a2fc51", "66915c2691800be264996a77"]
 
+    },
+    {
+        "name": "Kevin's vegan bbq",
+        "description": "BYO: bring your own food and we'll grill it for you! If you get it to me before the event I'll marinate it.",
+        "start": "2024-08-06",
+        "end": "2024-08-06",
+        "venue": "Kevin's vegan mancave",
+        "latitude": 43.35,
+        "longitude": 121.1633,
+        "owner": ["66915bd8ae0b707a1b431063"],
+        "attendees": ["66915ce8f661f7a1f2a2fc52", "66915ce8f661f7a1f2a2fc51", "66915c2691800be264996a77"]
+
+    },
+    {
+        "name": "Jason's REGULAR bbq",
+        "description": "Come and get some BEEF. For you carnivorous folks, this bbq is for you. Come and enjoy some classic All-American bbq.",
+        "start": "2024-09-06",
+        "end": "2024-09-06",
+        "venue": "Jason's house",
+        "latitude": 43.35,
+        "longitude": 121.1633,
+        "owner": ["66915bd8ae0b707a1b431063"],
+        "attendees": ["66915ce8f661f7a1f2a2fc52", "66915ce8f661f7a1f2a2fc51", "66915c2691800be264996a77"]
+
+    },
+    {
+        "name": "Grandma's Recovery Party",
+        "description": "My grandma is finally back from the hospital! Come and celebrate her speedy recovery. There will be tea and cookies, Earl grey with a splash of vanilla and milk, of course, and Grandma's famous homemade cookies!",
+        "start": "2024-12-12",
+        "end": "2024-12-12",
+        "venue": "Home",
+        "latitude": 44.35,
+        "longitude": 121.1333,
+        "owner": ["66915bd8ae0b707a1b431063"],
+        "attendees": ["66915c2691800be264996a76", "66915c2691800be264996a77", "66915ce8f661f7a1f2a2fc51"]
     }
   ]
