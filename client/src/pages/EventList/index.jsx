@@ -56,7 +56,7 @@ const EventList = () => {
   if(!Auth.loggedIn()){
     navigate('/login');
   }
-
+  refetch();
   return (
     <div>
       <div>

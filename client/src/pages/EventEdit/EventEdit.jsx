@@ -24,7 +24,7 @@ const EventEdit = ({ event }) => {
   
     const handleChange = (event) => {
       const { name, value } = event.target;
-      console.log(formState);
+
       setFormState({
         ...formState,
         [name]: value,
@@ -42,7 +42,7 @@ const EventEdit = ({ event }) => {
 
       console.log("formState",data);
       //redirect to event
-      navigate(`/event/${formState._id}`);
+      navigate(`/event/${data.editEvent._id}`);
       
     } catch (e) {
       console.error(e);
