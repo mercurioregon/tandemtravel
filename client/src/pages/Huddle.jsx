@@ -1,8 +1,12 @@
 import React from 'react'
+import Calendar from '../components/Calendar/CalendarRender'
 
 function Huddle() {
   return (
-    <div>Huddle</div>
+    <div>
+      <h1>Huddle</h1>
+      <Calendar/>
+       </div>
   )
 }
 

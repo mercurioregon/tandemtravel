@@ -11,6 +11,11 @@
   },
   "dependencies": {
     "@apollo/client": "^3.7.14",
+    "@fullcalendar/core": "^6.1.15",
+    "@fullcalendar/daygrid": "^6.1.15",
+    "@fullcalendar/interaction": "^6.1.15",
+    "@fullcalendar/react": "^6.1.15",
+    "@fullcalendar/timegrid": "^6.1.15",
     "graphql": "^16.6.0",
     "jwt-decode": "^3.1.2",
     "nodemon": "^3.1.4",

@@ -36,8 +36,8 @@ function MainNav() {
                     <Nav.Link as={Link} to='Huddle'>
                         Huddle
                     </Nav.Link>
-                    <Nav.Link as={Link} to='Contact-us'>
-                        Contact Us
+                    <Nav.Link as={Link} to='TravelChat'>
+                       TravelChat
                     </Nav.Link>
                     <Nav.Link as={Link} to='Login'>
                         Login

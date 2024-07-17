@@ -6,7 +6,7 @@ import App from './App.jsx';
 import Home from './pages/Home';
 import Login from './pages/LoginPage.jsx';
 import PageNotFound from './pages/404';
-import Contact from './pages/ContactUs';
+// import Contact from './pages/ContactUs';
 import Huddle from './pages/Huddle.jsx';
 //import Invite from './pages/Send-invite.jsx';
 import CreateAccount from './pages/Create-account.jsx';
@@ -15,6 +15,8 @@ import EventList from './pages/EventList';
 import EventSingle from './pages/EventSingle';
 import EventAdd from './pages/EventAdd';
 import EventEdit from './pages/EventEdit';
+import TravelChat from './pages/TravelChat/index.jsx';
+import Chat from './components/chat/index.jsx';
 
 
 
@@ -47,8 +49,12 @@ const router = createBrowserRouter([
         element: <EventAdd />
       },
       {
-        path: '/Contact-us',
-        element: <Contact />
+        path: '/TravelChat',
+        element: <TravelChat />
+      },
+      {
+        path: '/chat',
+        element: <Chat />
       },
       {
         path: '/Huddle',
