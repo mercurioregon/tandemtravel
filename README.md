@@ -32,7 +32,7 @@ React Chat Docs: https://www.freecodecamp.org/news/build-a-realtime-chat-app-wit
 
 
 ## Contributors:
- - [Kevin Roper]()
+ - [Kevin Roper](https://github.com/Kevins-Trove)
  - [James Mercurio](https://github.com/mercurioregon)
  - Ruben Villalobos
  - Bryon Fitzgerald
