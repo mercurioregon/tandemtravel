@@ -1,26 +1,35 @@
-
+import styles from './styles.module.css';
 import { useNavigate } from 'react-router-dom';
-import Auth from '../../utils/auth';
 
+const Chat = ({ username, setUsername, room, setRoom, socket }) => {
+  const navigate = useNavigate();
 
-function Chat() {
-    const navigate = useNavigate();
-
-    // Redirect to login if not already
-    if(!Auth.loggedIn()){
-        navigate('/login');
+  const joinRoom = () => {
+    if (room !== '' && username !== '') {
+      socket.emit('join_room', { username, room });
     }
-    
-    return (
-        <div>
-        <div>
-          <div className="d-flex justify-content-between align-items-center p-3 bg-light border">
-          <h1>Chat</h1>
-            </div>
-            </div>
-        
-        </div>
-      )
-  }
-  
-  export default Chat;
+    navigate('/chat', { replace: true });
+  };
+
+  return (
+    <div className={styles.container}>
+      <div className={styles.formContainer}>
+        <h1>{`TravelChat`}</h1>
+        <input className={styles.input}
+         placeholder='Username...' onChange={(e) => setUsername(e.target.value)} />
+
+        <select className={styles.input} onChange={(e) => setRoom(e.target.value)} >
+          <option>-- Select Room --</option>
+          <option value='Room 1'>Room 1</option>
+          <option value='Room 2'>Room 2</option>
+          <option value='Room 3'>Room 3</option>
+          <option value='Room 4'>Room 4</option>
+        </select>
+
+       <button className='btn btn-secondary' style={{ width: '100%' }}  onClick={joinRoom} >Join Room</button>
+      </div>
+    </div>
+  );
+};
+
+export default Chat;
