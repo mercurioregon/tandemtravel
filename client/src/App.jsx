@@ -35,7 +35,7 @@ function App() {
 
   return (
     <ApolloProvider client={client}>
-        <div className="bg-custom">
+        <div>
         <div className="flex-column justify-center align-center min-100-vh bg-primary">
           <Navbar />
           <Outlet />

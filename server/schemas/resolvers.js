@@ -70,13 +70,10 @@ const resolvers = {
       return { token, user };
     },
      addEvent: async (parent,  args) => {
-      console.log("addEvent ",args);
       const event = await Event.create(args);
       return event;
     },
     editEvent: async (parent, args) => {
-      console.log("editEvent ",args);
-      
       const event = await Event.findOneAndUpdate(
         { _id: args._id },
         { $set: {
@@ -97,10 +94,9 @@ const resolvers = {
    },
     deleteEvent: async (parent, { id }) => {
       try {
-        console.log("deleteEvent " + id._id);
+
         const result = await Event.findByIdAndDelete({ _id: id });
-        console.log("result");
-        console.log(result);
+
         return "Event deleted successfully";
       } catch (error) {
         throw new Error("Failed to delete event");
