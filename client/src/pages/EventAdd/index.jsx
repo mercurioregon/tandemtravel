@@ -5,6 +5,9 @@ import { useMutation } from '@apollo/client';
 import { ADD_EVENT } from '../../utils/mutations';
 import { useNavigate } from 'react-router-dom';
 
+
+import Auth from '../../utils/auth';
+
 const EventAdd = () => {
   const navigate = useNavigate();
 
@@ -33,7 +36,7 @@ const EventAdd = () => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-console.log({ ...formState });
+
     try {
       const { data } = await addEvent({
         variables: { ...formState },
@@ -49,11 +52,22 @@ console.log({ ...formState });
     }
   };
 
+  // Redirect to login if not already
+  if(!Auth.loggedIn()){
+    navigate('/login');
+  }
+  
   return (
+    <div>
+    <div>
+      <div className="d-flex justify-content-between align-items-center p-3 bg-light border">
+      <h1>Add Event</h1>
+        </div>
+        </div>
     <main className="flex-col justify-center mb-4">
       <div className="col-12 col-lg-10">
         <div className="card">
-          <h1>Add Event</h1>
+         
           <div className="card-body">
             {data ? (
               <p>
@@ -131,6 +145,7 @@ console.log({ ...formState });
         </div>
       </div>
     </main>
+    </div>
   );
 };
 

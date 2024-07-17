@@ -2,6 +2,7 @@ const { GraphQLScalarType } = require('graphql');
 const { Kind } = require('graphql/language');
 
 const { User, Event, CalendarEvent } = require('../models');
+const { signToken, AuthenticationError } = require('../utils/auth');
 
 const formatDate = (date) => {
   const d = new Date(date);
@@ -48,7 +49,25 @@ const resolvers = {
   Mutation: {
     addUser: async (parent, args) => {
       const user = await User.create(args);
-      return user;
+      const token = signToken(user);
+      
+      return { token, user };
+    },
+    login: async (parent, { email, password }) => {
+      const user = await User.findOne({ email });
+
+      if (!user) {
+        throw AuthenticationError;
+      }
+
+      const correctPw = await user.isCorrectPassword(password);
+
+      if (!correctPw) {
+        throw AuthenticationError;
+      }
+
+      const token = signToken(user);
+      return { token, user };
     },
      addEvent: async (parent,  args) => {
       console.log("addEvent ",args);
@@ -57,7 +76,6 @@ const resolvers = {
     },
     editEvent: async (parent, args) => {
       console.log("editEvent ",args);
-      
       
       const event = await Event.findOneAndUpdate(
         { _id: args._id },
@@ -73,7 +91,7 @@ const resolvers = {
         },
         { runValidators: true, new: true }
       );
-
+      console.log("event ",event);
       
       return event;
    },

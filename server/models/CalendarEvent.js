@@ -2,13 +2,10 @@ const { Schema, model } = require('mongoose');
 
 const calendarEventSchema = new Schema(
   {
-    name: {
+    title: {
       type: String,
       required: true,
       unique: true,
-    },
-    desciption: {
-        type: String,
     },
     start: {
         type: Date,

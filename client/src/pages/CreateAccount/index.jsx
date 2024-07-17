@@ -1,16 +1,14 @@
-import './index.css';
-import HeroImg from '../Page Components/HomepageComponents/HeroImg';
+
+import LoginForm from './CreateAccountForm';
 import InfoCards from '../Page Components/HomepageComponents/info-section';
 import Footer from '../Page Components/HomepageComponents/footerSection';
 
-export default function Homepage() {
+export default function CreateAccount() {
 
-  
   return (
-    
-  
+      
     <div className="hero">
-        <HeroImg />
+        <LoginForm />
         <InfoCards />
         <Footer />
     </div>

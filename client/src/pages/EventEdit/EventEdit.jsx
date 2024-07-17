@@ -8,11 +8,11 @@ const EventEdit = ({ event }) => {
   const navigate = useNavigate();
   
   const [formState, setFormState] = useState({
-    _id: event._id,
+    id: event._id,
     name: event.name,
     description: event.description,
-    start: new Date(event.start),
-    end: new Date(event.end),
+    start:new Date(event.start).toISOString().substring(0, 10),
+    end: new Date(event.end).toISOString().substring(0, 10),
     venue: event.venue,
     latitude: event.latitude,
     longitude: event.longitude,
@@ -24,7 +24,7 @@ const EventEdit = ({ event }) => {
   
     const handleChange = (event) => {
       const { name, value } = event.target;
-      console.log(formState);
+
       setFormState({
         ...formState,
         [name]: value,
@@ -40,6 +40,7 @@ const EventEdit = ({ event }) => {
         variables: { ...formState },
       });
 
+      console.log("formState",data);
       //redirect to event
       navigate(`/event/${data.editEvent._id}`);
       
@@ -49,10 +50,15 @@ const EventEdit = ({ event }) => {
   };
 
   return (
+      <div>
+    <div>
+    <div className="d-flex justify-content-between align-items-center p-3 bg-light border">
+      <h1>Edit Event</h1>
+    </div></div>
     <main className="flex-col justify-center mb-4">
       <div className="col-12 col-lg-10">
         <div className="card">
-          <h1>Edit Event</h1>
+         
           <div className="card-body">
             {data ? (
               <p>
@@ -82,7 +88,7 @@ const EventEdit = ({ event }) => {
                   placeholder="Start Date"
                   name="start"
                   type="date"
-                  value={formState.start.toISOString().substring(0, 10)}
+                  value={new Date(formState.start).toISOString().substring(0, 10)}
                   onChange={handleChange}
                 />
                 
@@ -91,7 +97,7 @@ const EventEdit = ({ event }) => {
                   placeholder="End Date"
                   name="end"
                   type="date"
-                  value={formState.end.toISOString().substring(0, 10)}
+                  value={new Date(formState.end).toISOString().substring(0, 10)}
                   onChange={handleChange}
                 />                
                 <input
@@ -130,6 +136,7 @@ const EventEdit = ({ event }) => {
         </div>
       </div>
     </main>
+    </div>
   );
 };
 

@@ -4,12 +4,7 @@ import { useQuery } from '@apollo/client';
 
 import { QUERY_EVENT_SINGLE } from '../../utils/queries';
 
-import { useNavigate } from 'react-router-dom';
-import Auth from '../../utils/auth';
-
 const EventSingle = () => {
-  const navigate = useNavigate();
-
   const { eventId } = useParams();
 
   const { loading, data } = useQuery(QUERY_EVENT_SINGLE, {
@@ -22,16 +17,10 @@ const EventSingle = () => {
   if (loading) {
     return <div>Loading...</div>;
   }
-  
-  // Redirect to login if not already
-  if(!Auth.loggedIn()){
-    navigate('/login');
-  }
- 
-  
+
   return (
     <div>
-      <div>
+      <div className='container'>
       <div className="d-flex justify-content-between align-items-center p-3 bg-light border">
         <h1>Event View</h1>
         <Link to={`/event/edit/${event._id}`}>

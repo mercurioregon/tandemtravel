@@ -1,13 +1,24 @@
-import React from 'react'
+import { useNavigate  } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 
 
+import Auth from '../../../utils/auth';
 
 function HeroImg() {
-    console.log('hero')
+    
     const mountain = "https://c.wallhere.com/photos/79/d7/1200x800_px_Hiking_landscape_mist_Morning_mountains_nature_photography-1263873.jpg!d";
-
-  return (
+    const token = Auth.loggedIn() ? Auth.getToken() : null;
+ 
+    const navigate = useNavigate();
+    
+    const goToLoginPage = () => {
+        navigate('/login');
+    };
+    
+    const goToEventsPage = () => {
+        navigate('/events');
+    };
+    return (
     <header style={{paddingLeft: 0}}>
         <div
         id='hero'
@@ -19,9 +30,17 @@ function HeroImg() {
                 <div className='hero-text mask'>
                     <h1 className="mb-3">Tandem</h1>
                     <h4 className="mb-3">Travel with friends</h4>
-                    <Button className='button'>
-                        View Trips
-                    </Button>
+                    
+                   
+                    {token ? 
+                        <Button className='button' onClick={goToEventsPage}>
+                            View Event
+                        </Button>
+                         : <Button className='button' onClick={goToLoginPage}>
+                            Login
+                        </Button>
+                    }
+                    
                 </div>
             </div>
         </div>
