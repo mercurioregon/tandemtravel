@@ -8,7 +8,7 @@ const EventCard = ({event}) => {
     <div>
       <Link to={`/event/${event._id}`}>
         <div>
-          <h3>{event.name}- {event.venue} {event.start} - {event.end}</h3>
+          <h3>{event.name} at {event.venue} </h3> <h4> {event.start} - {event.end}</h4>
           <p>{event.description}</p>
           <button >View</button>       
         </div>

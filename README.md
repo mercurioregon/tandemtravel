@@ -17,7 +17,13 @@ Huddle is a calendar feature where users and their invited guests can see upcomi
 
 
 ## Future Development
-Future options for TandemTravel are links to travel resources and the ability to coordinate and purchase tickets.  Ideally this could be accomplished through the app itself, and the options would not be limited to transportation.  Tickets for entertainment venues, theme parks, restaurants, etc., could be reached through TandemTravel.
+ While this project is under development.
+
+TandemTravel is an app designed for groups to plan events together and synchronize their travel details in real time.
+
+In the near future options for TandemTravel will offer a fully integrated group calendar, chat, and travel resources and the ability to coordinate and purchase tickets for entertainment venues, theme parks, and even restaurants reservations.
+
+### Tandem Travel will be a one stop spot to get your friends and family together.
 
 ## Resources
 Fullcalendar Docs: https://www.npmjs.com/package/@fullcalendar/interaction

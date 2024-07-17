@@ -50,8 +50,8 @@ function MainNav() {
                     {Auth.loggedIn() ? 
                         null
                          : 
-                         <Nav.Link as={Link} to='Contact-us'>
-                         Contact Us
+                         <Nav.Link as={Link} to='About'>
+                         About
                      </Nav.Link>
                     }
                     

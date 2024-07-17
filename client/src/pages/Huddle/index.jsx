@@ -1,8 +1,10 @@
+import { useQuery } from '@apollo/client';
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from "@fullcalendar/timegrid"
 import interactionPlugin from '@fullcalendar/interaction'
 import {useState} from 'react'
+import { QUERY_EVENT_LIST } from '../../utils/queries';
 import "./index.css"
 
 
@@ -11,27 +13,26 @@ import Auth from '../../utils/auth';
 
 
 function Huddle() {
+  const {  loading, error, data, refetch } = useQuery(QUERY_EVENT_LIST, {refetchOnWindowFocus: true, });
     const navigate = useNavigate();
-    
-    const [events, setEvents] = useState([
-      { title: 'Meeting', start: new Date() },
-      {title: "Meeting2", start: "2024-07-11T10:00:00", end: "2024-07-14T24:00:00"}
-    ])
-  
-    const handleDateClick =(arg) =>{
-      const titleprompt = prompt("Enter event information")
-  
-      const enddate = prompt("Enter end date DD/MM/YYYY")
-      const eventEnd = enddate.split('/').reverse().join('-')
-  
 
-      if (titleprompt){
-        setEvents([...events, {title: titleprompt, start: arg.dateStr, end: eventEnd}])
-      }
-    }
+    const [events, setEvents] = useState([])
+
+
+    const eventsCurrent = data?.events || [];
+
+    if (loading) return <p>Loading...</p>;
+
+    if (error) return <p>Error: {error.message}</p>;
+
+    
+      eventsCurrent.map((item) => {
+        events.push( {"_id": item._id, "title": item.name + " - " + item.venue, "start": new Date(item.start), "end": new Date(item.end) });
+      });
+    
+    
     const handleEventClick = (info) => {
-      if (window.confirm(`Delete ${info.event.title}?`))
-        info.event.remove()
+      navigate(`/event/${info.event.extendedProps._id}`);
     }
 
     // Redirect to login if not already
@@ -57,7 +58,7 @@ function Huddle() {
   events={events}
   selectable={true}
   // eventContent={renderEventContent}
-  dateClick={handleDateClick}
+  
   eventClick={handleEventClick}
 />
 </div>

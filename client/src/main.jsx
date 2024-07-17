@@ -6,7 +6,7 @@ import App from './App.jsx';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import PageNotFound from './pages/404';
-import Contact from './pages/ContactUs';
+import About from './pages/About';
 import Huddle from './pages/Huddle';
 import Chat from './pages/Chat';
 import CreateAccount from './pages/CreateAccount';
@@ -56,8 +56,8 @@ const router = createBrowserRouter([
         element: <EventAdd />
       },
       {
-        path: '/Contact-us',
-        element: <Contact />
+        path: '/about',
+        element: <About />
       },
       {
         path: '/huddle',
