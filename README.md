@@ -6,9 +6,10 @@ TandemTravel is an app designed for groups to plan events together and synchroni
 
 ## Screenshot
 ![Screenshot of Tandem Travel](/client/public/TandemTravelScreenShot.PNG?raw=true "TandemTravel")
+![Screenshot of Events](/client/public/TandemTravelEvents.PNG?raw=true "TandemTravelEvents")
 
 ## Requirements/Dependencies
-Node.js, Apollo, Mongoose, Cors, Vite, Bcrypt, Socket.io, HarperDB, FullCalendar
+Node.js, Apollo, Mongo, React, Cors, Vite, Bcrypt, Socket.io, HarperDB, FullCalendar
 
 ## Features
 TandemTravel is an all-in-one app.  Users create an account and log in with a username and password. They can invite others to events that are created on the Events tab. The Events tab leads to the Event List.  There, users will find a list of current list of events on their schedule and the ability to create new events. Clicking on the event reveals a description of the event.  
