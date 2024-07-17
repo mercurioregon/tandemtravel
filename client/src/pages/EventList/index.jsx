@@ -59,7 +59,7 @@ const EventList = () => {
 
   return (
     <div>
-      <div className='container'>
+      <div>
       <div className="d-flex justify-content-between align-items-center p-3 bg-light border">
           <h1>Events</h1>
           <Link to={`/event/add`}>

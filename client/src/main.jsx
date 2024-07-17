@@ -7,8 +7,8 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import PageNotFound from './pages/404';
 import Contact from './pages/ContactUs';
-import Huddle from './pages/Huddle.jsx';
-//import Invite from './pages/Send-invite.jsx';
+import Huddle from './pages/Huddle';
+import Chat from './pages/Chat';
 import CreateAccount from './pages/CreateAccount';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -60,8 +60,12 @@ const router = createBrowserRouter([
         element: <Contact />
       },
       {
-        path: '/Huddle',
+        path: '/huddle',
         element: <Huddle />
+      },
+      {
+        path: '/chat',
+        element: <Chat />
       },
       {
         path: '/Login',

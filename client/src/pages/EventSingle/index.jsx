@@ -31,7 +31,7 @@ const EventSingle = () => {
   
   return (
     <div>
-      <div className='container'>
+      <div>
       <div className="d-flex justify-content-between align-items-center p-3 bg-light border">
         <h1>Event View</h1>
         <Link to={`/event/edit/${event._id}`}>

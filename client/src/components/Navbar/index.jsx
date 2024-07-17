@@ -36,9 +36,17 @@ function MainNav() {
                         <Nav.Link as={Link} to='Huddle'>
                         Huddle
                     </Nav.Link>
+                    
                          : null
                     }
                     
+                    {Auth.loggedIn() ? 
+                        <Nav.Link as={Link} to='Chat'>
+                        Chat
+                    </Nav.Link>
+                    
+                         : null
+                    }
                     {Auth.loggedIn() ? 
                         null
                          : 

@@ -26,7 +26,7 @@ const Event = () => {
  
   
   return (
-    <div>
+    <div >
       <EventEdit event={data.event} />
     </div>
   );
